@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>New Tab</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <input type="text" id="search" placeholder="Search games..." onkeyup="filterGames()">
+    <div class="grid" id="gameGrid">
+      <a href="games/flappybird/index.html" class="tile">Flappy Bird</a>
+      <!-- Add more games here -->
+    </div>
+  </div>
+
+  <script>
+    function filterGames() {
+      const input = document.getElementById('search').value.toLowerCase();
+      const tiles = document.querySelectorAll('.tile');
+      tiles.forEach(tile => {
+        tile.style.display = tile.textContent.toLowerCase().includes(input) ? '' : 'none';
+      });
+    }
+  </script>
+</body>
+</html>
